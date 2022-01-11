@@ -1,4 +1,5 @@
 import cv2 as cv
+from matplotlib import pyplot as plt
 
 img = cv.imread('images/elephant13.png')
 
@@ -15,6 +16,11 @@ def rescaleFrame(frame, scale = 0.75):
 def rotateFrame(frame):
     return cv.rotate(frame, rotateCode = 0)
 
+
+def changePixel(frame):
+    plt.imshow(img)
+    pixel = img[50,50]
+    print(pixel)
 
 resizedImg = rescaleFrame(img)
 cv.imshow('Elephant Resized', resizedImg)
